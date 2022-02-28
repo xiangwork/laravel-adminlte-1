@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="form-group">
-                        <label for="name" class="control-label">{{ __('Name') }}
+                        <label for="name" class="control-label">{{ __('姓名') }}
                             <span class="text-danger">*</span></label>
                         <x-form.input type="text" name="name"
                                       value="{{ $role->exists ? $role->name : old('name') }}"/>

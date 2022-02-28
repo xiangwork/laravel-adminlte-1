@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dev[Geek] | {{ __('Form Login') }}</title>
+    <title>Dev[Geek] | 登录</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body class="hold-transition login-page text-gray-dark">
@@ -17,19 +18,20 @@
             <a href="#" class="h3"><b>Dev</b>[Geek]</a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">{{ __('Form Login') }}</p>
+            <p class="login-box-msg">用户登录</p>
 
             <form action="{{ route('login') }}" method="post">
                 @csrf
                 @if($errors->count() > 0)
-                   <ul class="text-danger">
-                       @foreach ($errors->all() as $error)
-                           <li class="text-sm">{{ $error }}</li>
-                       @endforeach
-                   </ul>
+                    <ul class="text-danger">
+                        @foreach ($errors->all() as $error)
+                            <li class="text-sm">{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 @endif
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="{{ __('Email') }}" name="email" value="{{ old('email') }}">
+                    <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                           placeholder="邮箱" name="email" value="{{ old('email') }}">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -38,7 +40,8 @@
                     <x-form.error key="email"/>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="{{ __('Password') }}" name="password">
+                    <input type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                           placeholder="密码" name="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -51,13 +54,13 @@
                         <div class="icheck-primary">
                             <input type="checkbox" id="remember" name="remember" value="true">
                             <label for="remember">
-                                {{ __('Remember Me') }}
+                                记住我
                             </label>
                         </div>
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">{{ __('Sign In') }}</button>
+                        <button type="submit" class="btn btn-primary btn-block">注册</button>
                     </div>
                     <!-- /.col -->
                 </div>
